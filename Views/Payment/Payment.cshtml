@@ -1,0 +1,105 @@
+﻿@{
+	Layout = "~/Views/Shared/_Layout.cshtml";
+	ViewBag.Title = "EoT - Questionnaires";
+}
+
+@Scripts.Render("~/Scripts/app/payments.js")
+
+
+<section class="services">
+	<div class="container">
+		<div class="row carousel-container" style="text-align: left !important">
+			<div class="col-lg-8 col-md-8 mt-2">
+				<div class="icon-box" data-aos="zoom-in-center" data-aos-delay="300">
+					<div id="divPayment" class="col-md-12">
+						<div class="col-10 ml-3">
+							<h4 class="animate__animated animate">Welcome UserFirstName LastName!</h4>
+						</div>
+						<div class="col-12">
+							<label class="col-md-10 col-md-offset-10 fw-bold">Service available </label>
+							<div class="input-group-vertical mt-3" role="group">
+								<div class="input-group mb-3 ">
+									<label class="col-md-4 col-md-offset-4 fw-bold">Total cost(incl. GST): </label>
+									<label class="col-md-4 col-md-offset-4 fw-bold">$5.00 </label>
+								</div>
+								<div class="input-group mb-3">
+									<h5>Scan to pay via any of these apps</h5>
+								</div>
+								<div class="input-group mb-3">
+									<img src="https://chart.googleapis.com/chart?cht=qr&chl=Hello+World&chs=160x160&chld=L|0"
+										 class="qr-code img-thumbnail img-responsive" />
+								</div>
+							</div>
+						</div>
+					</div>
+
+
+					<div id="divSelectTimeSlot" class="col-md-12">
+						<div class="col-8 ml-3">
+							<h3>Select your time solt</h3>
+						</div>
+						<div class="col-12 mt-4">
+							<div class="input-group mb-3">
+								<label class="col-md-4 col-md-offset-4 fw-bold">Time Slot </label>
+								<input type="date" class="form-control mt-n1 col-md-6 col-md-offset-6" id="txtScheduleDate">
+								<input type="time" class="form-control mt-n1 col-md-6 col-md-offset-6" id="txtTimeDate">
+							</div>
+						</div>
+					</div>
+
+					<div id="divPaymentSuccess" class="col-md-12">
+						<div class="col-12 ml-3">
+							<h3>Your payment is successful!</h3>
+						</div>
+						<div class="col-12 mt-4">
+							<button type="button" class="w-100 btn btn-outline-secondary m-2" id="btnStartScreening"
+									onclick="location.href= '@Url.Action("Screening", "Screening")';return false;">
+								Start Screening
+							</button>
+						</div>
+					</div>
+
+					<div id="divScheduleSuccess" class="col-md-12">
+						<div class="col-12 ml-3">
+							<h4>You have successfully booked a timeslot for EoT booth</h4>
+						</div>
+						<div class="col-12">
+							<label class="col-md-12 col-md-offset-12 fw-bold" style="text-align:center">Details:</label>
+							<div class="input-group-vertical" role="group">
+								<div class="input-group">
+									<label class="col-md-12 col-md-offset-12 fw-bold" style="text-align:center">Punggol 21 CC</label>
+								</div>
+								<div class="input-group">
+									<label class="col-md-12 col-md-offset-12 fw-bold" style="text-align:center">01 Jan 2021</label>
+								</div>
+								<div class="input-group">
+									<label class="col-md-12 col-md-offset-12 fw-bold" style="text-align:center">9:30 - 10:30</label>
+								</div>
+							</div>
+						</div>
+						<div class="col-12">
+							<div class="col-12">
+								<button type="button" class="w-100 btn btn-outline-info m-2">Send details to me via Email</button>
+							</div>
+							<div class="col-12">
+								<button type="button" class="w-100 btn btn-outline-info m-2">Send details to me via SMS</button>
+							</div>
+						</div>
+					</div>
+
+					<div class="row d-flex justify-content-center text-center">
+						<div class="col-lg-2 col-md-2">
+							<button type="button" class="btn btn-secondary" id="btnPaymentSuccess">Success</button>
+						</div>
+						<div class="col-lg-2 col-md-2">
+							<button type="button" class="btn btn-danger" id="btnPaymentFailed" onclick="location.href= '@Url.Action("Help", "Help")';return false;">Failed</button>
+						</div>
+						<div class="col-lg-2 col-md-2 ml-n5">
+							<button type="button" class="btn btn-success ml-n5" id="btnScheduleDateTime">Schedule</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
